@@ -1,0 +1,112 @@
+/* mobile - tablet */
+@media (max-width: 1023px){
+    :root{
+        --height-header: 68px;
+        --height-nav: 0px;
+    }
+    .hide-on-mobile-tablet{
+        display: none;
+    }
+    .search-cart__list{
+        position: fixed;
+        top: var(--height-header);
+        right: 0px;
+        width: 100%;
+        padding: 0 calc((100% - 644px)/2);
+    }
+    .search-cart__list::before{
+        display: none;
+    }
+    .header{
+        top: 0;
+        left: 0;
+        right: 0;
+        position: fixed;
+        z-index: 2;
+    }
+    .app__container{
+        margin-top: calc(var(--height-header) + var(--header-sort-bar-height));
+    }
+    .header__sort-list{
+        display: flex;
+    }
+    .mobile__category{
+        display: block;
+    }
+}
+
+/* tablet */
+@media (min-width: 740px) and (max-width: 1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+    
+    .search-cart-notice{
+        right: -12px;
+    }
+    .search-cart{
+        width: 80px;
+        text-align: right;
+    }
+    
+}
+
+/* mobile */
+@media (max-width: 739px){
+    .hide-on-mobile{
+        display: none;
+    }
+    .search{
+        justify-content: space-between;
+    }
+    .search-cart-notice{
+        top: -8px;
+        right: -8px;
+    }
+    .search-cart,
+    .search__logo{
+        width: unset;
+    }
+    .search__search{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: var(--height-header);
+        z-index: 1;
+        padding: 0 16px;
+        animation: mobileSearchFadeIn linear 0.3s;
+        display: none;
+    }
+    .search__mobile-search {
+        display: block;
+    }
+
+    .pagination-item__link{
+        --height: 28px;
+        min-width: 34px;
+    }
+
+    .pagination-item{
+        margin: 0;
+    }
+
+    .app__content{
+        padding-top: 8px;
+    }
+
+    .search__search-select{
+        display: none;
+    }
+
+
+    @keyframes mobileSearchFadeIn {
+        from{
+            opacity: 0;
+            top: calc(var(--height-header)/2);
+        }
+        to{
+            opacity: 1;
+            top: var(--height-header);
+        }
+    }
+}
